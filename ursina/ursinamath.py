@@ -48,6 +48,15 @@ def distance2d(a, b):
 
 
 def distance_xz(a, b):
+    # if input is Entity, convert to positions
+    try:
+        a = a.position
+    except:
+        pass
+    try:
+        b = b.position
+    except:
+        pass
     return sqrt((b[0] - a[0])**2 + (b[2] - a[2])**2)
 
 
@@ -134,3 +143,4 @@ if __name__ == '__main__':
     print(round(Vec3(.38, .1351, 353.26), 2))
 
     app.run()
+
